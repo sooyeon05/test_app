@@ -1,1 +1,6 @@
 streamlit
+pandas
+numpy
+pydeck
+reverse_geocoder
+country_converter
