@@ -134,7 +134,7 @@ st.divider()
 # ---------------------------
 tab_map, tab_trend, tab_region, tab_data = st.tabs(["🗺️ 지도", "📈 추세", "🌐 지역 집계", "🗃️ 데이터"])
 
-# ===== 지도  =====
+# ===== 지도 (가시성 강화) =====
 with tab_map:
     st.subheader("📍 지진 위치 ")
     if len(f):
@@ -191,14 +191,8 @@ with tab_map:
             map_provider="carto"  # 토큰 없이 사용
         )
         st.pydeck_chart(deck, use_container_width=True)
-        
     else:
         st.info("표시할 결과가 없습니다. 필터를 조정해 보세요.")
-
-
-
-
-
 
 # ===== 추세 =====
 with tab_trend:
