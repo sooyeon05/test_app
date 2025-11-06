@@ -136,7 +136,7 @@ tab_map, tab_trend, tab_region, tab_data = st.tabs(["🗺️ 지도", "📈 추�
 
 # ===== 지도  =====
 with tab_map:
-    st.subheader("📍 지진 위치 (가시성 강화)")
+    st.subheader("📍 지진 위치 ")
     if len(f):
         # 뷰포트
         if f["lat"].notna().any() and f["lon"].notna().any():
