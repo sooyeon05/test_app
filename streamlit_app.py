@@ -191,8 +191,38 @@ with tab_map:
             map_provider="carto"  # 토큰 없이 사용
         )
         st.pydeck_chart(deck, use_container_width=True)
+        # (지도 렌더링 바로 아래)
+st.markdown(
+    """
+    <div style="margin-top:8px;padding:10px 12px;border:1px solid #eaeaea;border-radius:8px;background:#fafafa">
+      <div style="font-weight:600;margin-bottom:6px;">색상 범례 (Magnitude, 지진 규모)</div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:160px;height:12px;background:linear-gradient(90deg,
+            rgb(120,160,80) 0%,
+            rgb(200,140,60) 40%,
+            rgb(230,90,60) 70%,
+            rgb(255,40,60) 100%);
+            border:1px solid #ddd;border-radius:4px;"></div>
+        <div style="font-size:12px;color:#555;">녹/노랑 → 주황 → 빨강 으로 갈수록 <b>규모가 큼</b></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:#777;margin-top:4px;">
+        <span>M≈2</span><span>M≈4</span><span>M≈6</span><span>M≈8+</span>
+      </div>
+      <div style="font-size:12px;color:#666;margin-top:6px;">
+        점의 <b>크기</b>도 규모에 비례하여 커집니다. 흰색 테두리는 겹치는 위치를 구분하기 위한 시각적 강조입니다.
+      </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
     else:
         st.info("표시할 결과가 없습니다. 필터를 조정해 보세요.")
+
+
+
+
+
 
 # ===== 추세 =====
 with tab_trend:
